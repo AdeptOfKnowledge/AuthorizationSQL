@@ -57,7 +57,10 @@ namespace Authorization
 
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Yes");
+                PortalForm portal = new PortalForm();
+                portal.userLogin = UserLogin;
+                portal.Show();
+                this.Hide();
             }
 
             else MessageBox.Show("Имя пользователя или пароль не совпадают");
