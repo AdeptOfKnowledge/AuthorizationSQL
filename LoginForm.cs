@@ -65,7 +65,9 @@ namespace Authorization
 
         private void RegistrationButton_Click(object sender, EventArgs e)
         {
-
+            RegForm f = new RegForm();
+            f.Show();
+            this.Hide();
         }
 
         private void PassShow_MouseClick(object sender, MouseEventArgs e)
