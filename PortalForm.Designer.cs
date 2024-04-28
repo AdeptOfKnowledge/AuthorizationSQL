@@ -36,7 +36,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.NickName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,13 +44,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Exit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AuthorizationText = new System.Windows.Forms.Label();
+            this.WelcomeText = new System.Windows.Forms.Label();
+            this.NickName = new System.Windows.Forms.TextBox();
+            this.AdminPanel = new System.Windows.Forms.PictureBox();
             this.Logout = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,19 +150,6 @@
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Search:";
-            // 
-            // NickName
-            // 
-            this.NickName.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.NickName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NickName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NickName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NickName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.NickName.Location = new System.Drawing.Point(542, 118);
-            this.NickName.Name = "NickName";
-            this.NickName.Size = new System.Drawing.Size(208, 22);
-            this.NickName.TabIndex = 21;
-            this.NickName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox2
             // 
@@ -263,39 +252,64 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.Exit);
-            this.panel1.Controls.Add(this.AuthorizationText);
+            this.panel1.Controls.Add(this.WelcomeText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 17;
             // 
-            // AuthorizationText
+            // WelcomeText
             // 
-            this.AuthorizationText.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.AuthorizationText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.AuthorizationText.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.AuthorizationText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AuthorizationText.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthorizationText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AuthorizationText.Location = new System.Drawing.Point(0, 0);
-            this.AuthorizationText.Name = "AuthorizationText";
-            this.AuthorizationText.Size = new System.Drawing.Size(800, 100);
-            this.AuthorizationText.TabIndex = 0;
-            this.AuthorizationText.Text = "You are welcome!";
-            this.AuthorizationText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AuthorizationText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AuthorizationText_MouseDown);
-            this.AuthorizationText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AuthorizationText_MouseMove);
+            this.WelcomeText.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.WelcomeText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.WelcomeText.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.WelcomeText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WelcomeText.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WelcomeText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.WelcomeText.Location = new System.Drawing.Point(0, 0);
+            this.WelcomeText.Name = "WelcomeText";
+            this.WelcomeText.Size = new System.Drawing.Size(800, 100);
+            this.WelcomeText.TabIndex = 0;
+            this.WelcomeText.Text = "You are welcome!";
+            this.WelcomeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WelcomeText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WelcomeText_MouseDown);
+            this.WelcomeText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WelcomeText_MouseMove);
+            // 
+            // NickName
+            // 
+            this.NickName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.NickName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NickName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NickName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NickName.ForeColor = System.Drawing.Color.Teal;
+            this.NickName.Location = new System.Drawing.Point(542, 118);
+            this.NickName.Name = "NickName";
+            this.NickName.Size = new System.Drawing.Size(178, 22);
+            this.NickName.TabIndex = 24;
+            this.NickName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // AdminPanel
+            // 
+            this.AdminPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AdminPanel.Image = global::Authorization.Properties.Resources.admin_panel;
+            this.AdminPanel.Location = new System.Drawing.Point(756, 114);
+            this.AdminPanel.Name = "AdminPanel";
+            this.AdminPanel.Size = new System.Drawing.Size(25, 26);
+            this.AdminPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AdminPanel.TabIndex = 26;
+            this.AdminPanel.TabStop = false;
+            this.AdminPanel.Click += new System.EventHandler(this.AdminPanel_Click);
             // 
             // Logout
             // 
             this.Logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Logout.Image = global::Authorization.Properties.Resources.logout;
-            this.Logout.Location = new System.Drawing.Point(756, 116);
+            this.Logout.Location = new System.Drawing.Point(725, 115);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(25, 25);
             this.Logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logout.TabIndex = 22;
+            this.Logout.TabIndex = 25;
             this.Logout.TabStop = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
@@ -305,10 +319,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.NickName);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -326,6 +341,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AdminPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,8 +358,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox Logout;
-        private System.Windows.Forms.TextBox NickName;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -352,6 +366,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label AuthorizationText;
+        private System.Windows.Forms.Label WelcomeText;
+        private System.Windows.Forms.PictureBox AdminPanel;
+        private System.Windows.Forms.PictureBox Logout;
+        private System.Windows.Forms.TextBox NickName;
     }
 }

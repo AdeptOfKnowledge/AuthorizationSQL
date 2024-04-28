@@ -73,6 +73,16 @@ namespace Authorization.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admin_panel {
+            get {
+                object obj = ResourceManager.GetObject("admin-panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
@@ -86,6 +96,16 @@ namespace Authorization.Properties {
         internal static System.Drawing.Bitmap programmer {
             get {
                 object obj = ResourceManager.GetObject("programmer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow_1 {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
