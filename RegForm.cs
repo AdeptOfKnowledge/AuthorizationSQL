@@ -132,12 +132,12 @@ namespace Authorization
             if (PasswordField.Text != RetPassField.Text)
             { MessageBox.Show("Пароли не совпадают"); return; }
 
-            if (isUserExists()) return;
+            if (isUserExists()) return;     
 
             DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO users (`login`, `pass`, `name`, `surname`) VALUES (@login, @pass, @name, @surname)", db.GetConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO users (login, pass, name, surname) VALUES (@login, @pass, @name, @surname)", db.GetConnection());
             command.Parameters.Add("@login", MySqlDbType.VarChar).Value = LoginField.Text;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PasswordField.Text;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PassHash.PWhash(PasswordField.Text);
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = NameField.Text;
             command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = SurnameField.Text;
 

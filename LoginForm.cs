@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,7 +51,7 @@ namespace Authorization
 
             MySqlCommand command = new MySqlCommand("SELECT * from users WHERE login = @UL AND pass = @UP", db.GetConnection());
             command.Parameters.Add("@UL", MySqlDbType.VarChar).Value = UserLogin;
-            command.Parameters.Add("@UP", MySqlDbType.VarChar).Value = UserPass;
+            command.Parameters.Add("@UP", MySqlDbType.VarChar).Value = PassHash.PWhash(Password.Text);
 
             adapter.SelectCommand = command;
             adapter.Fill(table);

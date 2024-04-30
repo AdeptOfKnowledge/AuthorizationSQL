@@ -384,6 +384,11 @@ namespace Authorization
                 db.CloseConnection(); //Закрываем соединение 
 
                 Users.Items.Clear();
+                loginField.Text = ""; statusField.Text = "";
+                nameField.Text = ""; surnameField.Text = "";
+                AdminButton.CheckState = CheckState.Unchecked; superAdminButton.CheckState = CheckState.Unchecked;
+                AdminButton.BackColor = Color.FromArgb(255, 153, 180, 209);
+                superAdminButton.BackColor = Color.FromArgb(255, 153, 180, 209);
                 AdminForm_Load(this, EventArgs.Empty);
             }
         }
